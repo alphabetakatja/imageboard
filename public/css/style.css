@@ -1,3 +1,30 @@
 body {
     background-color: hotpink;
+
+    /* grid-columns: 1fr 1fr 1fr 1fr; */
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 10px;
+}
+
+.image-of-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.image-title {
+    text-align: center;
 }

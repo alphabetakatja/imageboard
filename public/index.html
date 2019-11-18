@@ -8,8 +8,13 @@
     <h1>Imageboard</h1>
 
     <div id="main">
-        <!-- anything living insise od the main div will be in vue -->
-        <h2>The best cohort is... {{ name }}</h2>
+        <div class="image-container">
+            <div  class="image-of-images" v-for="image in images">
+                    <img :src="image.url"></img>
+                    <p class="image-title">{{image.title}}</p>
+
+            </div>
+        </div>
     </div>
 
 

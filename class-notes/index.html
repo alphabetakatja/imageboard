@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>Imageboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Imageboard</h1>
+
+    <div id="main">
+        <!-- anything living insise od the main div will be in vue -->
+        <h2>The best cohort is... {{ name }}</h2>
+        <!-- <h2>Maths! 2 * 2 = {{ 2 * 2 }}</h2>
+        <h2>Capitalise! = {{name.toUpperCase()}}</h2>
+        <h2 v-if="seen">Can you see me?</h2>
+        <h2 v-else>I am the else...</h2> -->
+        <ul>
+            <li v-for="animal in animals" @click="myFunction(animal.name)">
+                {{animal.name}} {{animal.emoji}}
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>
