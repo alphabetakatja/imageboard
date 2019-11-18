@@ -1,26 +1,37 @@
 <!doctype html>
 <html>
-<head>
-    <title>Imageboard</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <h1>Imageboard</h1>
+    <head>
+        <title>Imageboard</title>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Brutalist Architecture Imageboard</h1>
 
-    <div id="main">
-        <div class="image-container">
-            <div  class="image-of-images" v-for="image in images">
-                    <img :src="image.url"></img>
-                    <p class="image-title">{{image.title}}</p>
+        </header>
+        <main>
+            <div id="main">
+                <div class="image-container">
+                    <div  class="image-card" v-for="image in images">
+                        <img :src="image.url"></img>
+                        <p class="image-title">{{image.title}}</p>
 
+                        <div class="image-decription">
+                        </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+
+        </main>
 
 
 
 
-
+        <footer>
+            <p>&copy; Simone Hutsch on Unsplash</p>
+        </footer>
 
 
     <script src="/js/vue.js"></script>

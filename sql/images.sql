@@ -29,3 +29,10 @@ INSERT INTO images (url, username, title, description) VALUES (
     'Hello Berlin',
     'This is going to be worth a lot of money one day.'
 );
+
+-- INSERT INTO images (url, username, title, description) VALUES (
+--     'http://assets.atlasobscura.com/article_images/lg/29447/image.jpg'
+--     'discoduck',
+--     'Geisel Library, San Diego CA',
+--     'A prominent example of brutalist architecture...'
+-- );

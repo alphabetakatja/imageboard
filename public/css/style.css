@@ -1,30 +1,83 @@
-body {
-    background-color: hotpink;
-
-    /* grid-columns: 1fr 1fr 1fr 1fr; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
+html {
+    backrground-color: #fff;
+    color: #e0e0e0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-renderding: optimizeLegibility;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+        url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    background-attachment: fixed;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 90px 1fr 20px;
+    color: #cccccc;
+}
+
+body h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 35px;
+    color: black;
 }
 
 .image-container {
+    width: 90%;
+    margin: 30px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-gap: 6vw;
 }
 
-.image-of-images {
+.image-card {
+    display: flex;
+    flex-direction: column;
+    color: #eaeaea;
+    margin: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    max-width: 260px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+img {
+    object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 300px;
+    width: 100%;
+}
+
+/* p {
+    margin: 5px 0;
+} */
+
+.image-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px black solid;
-    border-radius: 5px;
+    text-align: center;
+    padding-right: 10px;
+    min-height: 60px;
+    grid-column: 1 / -1;
+    font-size: 18px;
+    color: #e0e0e0;
 }
 
-.image-title {
-    text-align: center;
+footer p {
+    font-size: 15px;
 }
