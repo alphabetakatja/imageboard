@@ -14,8 +14,8 @@ html {
 }
 
 body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
-        url(background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+        url(back.JPG);
     background-size: cover;
     background-position: center;
     height: 100%;
@@ -27,26 +27,24 @@ body {
 }
 
 body h1 {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
+    margin: 30px 0 30px 30px;
+    text-align: left;
     font-weight: 200;
     font-size: 35px;
-    color: black;
+    color: #cccccc;
 }
 
 .upload-form {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 0;
-    margin-left: 10px;
+    display: inline-block;
+    margin-left: 20px;
 }
 
 input {
-    width: 150px;
-    height: 20px;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
     border-radius: 5px;
-    padding: 5px 10px;
 }
 
 .submit-btn {
@@ -57,7 +55,7 @@ input {
 }
 
 .image-container {
-    width: 90%;
+    width: 100%;
     margin: 30px auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -73,7 +71,7 @@ input {
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    max-width: 260px;
+    max-width: 300px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
@@ -103,4 +101,6 @@ img {
 
 footer p {
     font-size: 15px;
+    text-align: right;
+    margin-right: 20px;
 }

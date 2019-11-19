@@ -42,11 +42,6 @@ app.post("/upload", uploader.single("file"), s3.upload, (req, res) => {
     console.log("this is the upload route!");
     console.log("input...", req.body);
     console.log("req.file ", req.file); // the middleware gives us access to this req.file
-    // if (req.file) {
-    //     res.json({ success: true });
-    // } else {
-    //     res.json({ success: false });
-    // }
     const { title, description, username } = req.body;
     const imageUrl = `${s3Url}${req.file.filename}`;
     db.addImage(title, description, username, imageUrl)
