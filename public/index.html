@@ -12,13 +12,21 @@
         </header>
         <main>
             <div id="main">
+                <form class="upload-form">
+                    <input v-model="title" class="add-title" type="text" name="title" placeholder="title">
+                    <input v-model="description" class="add-description" type="text" name="description" placeholder="description">
+                    <input v-model="username" class="add-username" type="text" name="username" placeholder="username">
+                    <input @change="handleChange" class="add-file" type="file" name="file" accept="image/*">
+                    <button class="submit-btn" type="submit" name="button" @click.prevent.default="handleClick">Submit</button>
+                </form>
+
                 <div class="image-container">
                     <div  class="image-card" v-for="image in images">
                         <img :src="image.url"></img>
                         <p class="image-title">{{image.title}}</p>
 
-                        <div class="image-decription">
-                        </div>
+                        <!-- <div class="image-decription">
+                        </div> -->
 
                     </div>
                 </div>

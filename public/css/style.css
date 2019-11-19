@@ -35,6 +35,27 @@ body h1 {
     color: black;
 }
 
+.upload-form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0;
+    margin-left: 10px;
+}
+
+input {
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.submit-btn {
+    width: 100px;
+    border-radius: 5px;
+    background-color: grey;
+    padding: 5px 10px;
+}
+
 .image-container {
     width: 90%;
     margin: 30px auto;
@@ -50,6 +71,8 @@ body h1 {
     margin: 20px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     max-width: 260px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
