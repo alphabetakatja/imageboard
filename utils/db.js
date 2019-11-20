@@ -11,3 +11,7 @@ exports.addImage = function(title, description, username, imageUrl) {
         [title, description, username, imageUrl]
     );
 };
+
+exports.getImageData = function(imageId) {
+    return db.query(`SELECT * FROM images WHERE id=$1`, [imageId]);
+};

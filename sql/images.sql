@@ -30,9 +30,12 @@ INSERT INTO images (url, username, title, description) VALUES (
     'This is going to be worth a lot of money one day.'
 );
 
--- INSERT INTO images (url, username, title, description) VALUES (
---     'http://assets.atlasobscura.com/article_images/lg/29447/image.jpg'
---     'discoduck',
---     'Geisel Library, San Diego CA',
---     'A prominent example of brutalist architecture...'
--- );
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE comments(
+    id SERIAL PRIMARY KEY,
+    img_id INTEGER NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    comment VARCHAR(400) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

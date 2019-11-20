@@ -27,7 +27,9 @@ const uploader = multer({
 });
 
 app.use(express.static("./public"));
+app.use(express.json());
 
+// *************** ROUTES *********************
 app.get("/images", (req, res) => {
     db.getImages().then(results => {
         console.log(results.rows);
@@ -58,6 +60,17 @@ app.post("/upload", uploader.single("file"), s3.upload, (req, res) => {
             }
         })
         .catch(err => console.log("error in addImage: ", err));
+});
+
+// app.post("/insert-comment", (req, res) => {
+//     console.log("/insert-comment post route input: ", req.body);
+// });
+
+app.get("/image-data/:id", (req, res) => {
+    console.log("get request of show-modal", req.params);
+    db.getImageData(req.params.id).then(results => {
+        res.json(results.rows);
+    });
 });
 
 app.listen(8080, () => console.log("Imageboard up and running!"));

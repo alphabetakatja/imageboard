@@ -22,28 +22,44 @@
 
                 <div class="image-container">
                     <div  class="image-card" v-for="image in images">
-                        <img :src="image.url"></img>
+                        <img :src="image.url" @click="setCurrentImage(image.id)"></img>
                         <p class="image-title">{{image.title}}</p>
 
                         <!-- <div class="image-decription">
                         </div> -->
 
+                        <!-- this method needs to exist in the vue instance(in the parent element) -->
+
+                        <!-- the emitting happens in the child component -->
+                        <!-- the image id would be a prop -->
+
                     </div>
+                    <modal
+                    v-if="currentImage"
+                    v-bind:id="currentImage"></modal>
                 </div>
             </div>
 
         </main>
 
-
-
-
         <footer>
             <p>&copy; Katja Stefan</p>
         </footer>
 
+    <script type="text/x-template" id="modal-template">
+<!-- tu cemo vjerojatno staviti modal koji kad otvorimo daje nam naslov, opis i timestamp -->
+        <div class="modal-box">
+            <img :src="image">
+            <h2>{{title}}</h2>
+            <p>{{description}}</p>
+            <h6>Uploaded by {{username}} on {{timestamp}}</h6>
+        </div>
+    </script>
 
+    
     <script src="/js/vue.js"></script>
     <script src="/js/axios.min.js"></script>
+    <script src="/js/component.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>

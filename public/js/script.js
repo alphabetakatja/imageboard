@@ -1,7 +1,9 @@
+// creating a vue instance
 new Vue({
     el: "#main",
     data: {
         seen: false,
+        currentImage: null,
         images: [],
         title: "",
         description: "",
@@ -48,6 +50,9 @@ new Vue({
             // it's an arraylike object and the file lives only in the first item of this object
             console.log("e.target.files[0]", e.target.files[0]);
             this.file = e.target.files[0];
+        },
+        setCurrentImage: function(id) {
+            this.currentImage = id;
         }
     }
 });
