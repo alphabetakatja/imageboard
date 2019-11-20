@@ -1,4 +1,4 @@
-// creating a vue instance
+// ******************** VUE INSTANCE ***************************
 new Vue({
     el: "#main",
     data: {
@@ -28,7 +28,6 @@ new Vue({
             e.preventDefault();
             console.log("this: ", this);
             var me = this;
-            // this.title, this.description, this.username
             var fd = new FormData();
             fd.append("file", this.file);
             fd.append("title", this.title);
@@ -53,6 +52,9 @@ new Vue({
         },
         setCurrentImage: function(id) {
             this.currentImage = id;
+        },
+        closingTheModal: function() {
+            this.currentImage = null;
         }
     }
 });

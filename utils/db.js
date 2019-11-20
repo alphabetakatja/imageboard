@@ -15,3 +15,22 @@ exports.addImage = function(title, description, username, imageUrl) {
 exports.getImageData = function(imageId) {
     return db.query(`SELECT * FROM images WHERE id=$1`, [imageId]);
 };
+
+module.exports.getImageComments = function(imageId) {
+    return db.query(
+        `
+        SELECT * FROM comments
+        WHERE img_id =$1`,
+        [imageId]
+    );
+};
+
+module.exports.addImageComment = function(text, name, imageId) {
+    return db.query(
+        `INSERT INTO comments (comment, username, img_id)
+        VALUES ($1, $2, $3)
+        RETURNING *
+        `,
+        [text || null, name || null, imageId]
+    );
+};

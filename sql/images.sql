@@ -34,7 +34,7 @@ DROP TABLE IF EXISTS comments;
 
 CREATE TABLE comments(
     id SERIAL PRIMARY KEY,
-    img_id INTEGER NOT NULL,
+    img_id INTEGER NOT NULL REFERENCES images(id),
     username VARCHAR(255) NOT NULL,
     comment VARCHAR(400) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
