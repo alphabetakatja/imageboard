@@ -116,6 +116,11 @@ img {
     color: #e0e0e0;
 }
 
+#show-more {
+    margin-left: 500px;
+    width: 400px;
+}
+
 footer p {
     font-size: 15px;
     text-align: right;

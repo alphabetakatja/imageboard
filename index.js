@@ -91,4 +91,13 @@ app.post("/comment/:id/add", (req, res) => {
         .catch(err => console.log("error in add-comment post req: ", err));
 });
 
+app.get("/more/:lastId", (req, res) => {
+    console.log("req.body in /more: ", req.params);
+    let lastId = req.params.lastId;
+    db.showMoreImages(lastId).then(results => {
+        console.log("results in show more images: ", results.rows);
+        res.json(results.rows);
+    });
+});
+
 app.listen(8080, () => console.log("Imageboard up and running!"));
