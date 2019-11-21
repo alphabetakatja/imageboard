@@ -122,6 +122,12 @@ img {
     /* position: fixed; */
 }
 
+#print-message {
+    margin-left: 500px;
+    color: #ce792e;
+    font-size: 20px;
+}
+
 footer p {
     font-size: 15px;
     text-align: right;

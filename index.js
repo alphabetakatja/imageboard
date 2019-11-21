@@ -6,6 +6,7 @@ const path = require("path");
 const app = express();
 const s3 = require("./s3");
 const { s3Url } = require("./config");
+const moment = require("moment");
 
 const diskStorage = multer.diskStorage({
     destination: function(req, file, callback) {
@@ -65,6 +66,10 @@ app.get("/image-data/:id", (req, res) => {
     console.log("get request of show-modal", req.params);
     db.getImageData(req.params.id)
         .then(results => {
+            console.log("results in image data moment.js: ", results.rows);
+            results.rows[0].created_at = moment(
+                results.rows[0].created_at
+            ).format("LLLL");
             res.json(results.rows);
         })
         .catch(err => console.log("Error in GET /image-data/:id ", err));
@@ -73,6 +78,9 @@ app.get("/image-data/:id", (req, res) => {
 app.get("/image-data/:id/comments", (req, res) => {
     db.getImageComments(req.params.id).then(results => {
         console.log("getImageComments results: ", results.rows);
+        results.rows[0].created_at = moment(results.rows[0].created_at).format(
+            "LLLL"
+        );
         res.json(results.rows);
     });
 });
