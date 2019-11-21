@@ -78,9 +78,11 @@ app.get("/image-data/:id", (req, res) => {
 app.get("/image-data/:id/comments", (req, res) => {
     db.getImageComments(req.params.id).then(results => {
         console.log("getImageComments results: ", results.rows);
-        results.rows[0].created_at = moment(results.rows[0].created_at).format(
-            "LLLL"
-        );
+        for (let i = 0; i < results.rows.length; i++) {
+            results.rows[i].created_at = moment(
+                results.rows[i].created_at
+            ).format("LLLL");
+        }
         res.json(results.rows);
     });
 });
