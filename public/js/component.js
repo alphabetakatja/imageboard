@@ -18,6 +18,21 @@ Vue.component("modal", {
     },
     // we shouldn't change the props
     // the id of each image as a prop
+    watch: {
+        id: function() {
+            var me = this;
+            axios.get(`/image-data/${me.id}`).then(function(response) {
+                if (response.data.length > 0) {
+                    me.image = response.data[0].url;
+                } else {
+                    function closeModal() {
+                        me.$emit("close-the-modal");
+                    }
+                    closeModal();
+                }
+            });
+        }
+    },
     mounted: function() {
         console.log("my Modal component has mounted!");
         var me = this;
