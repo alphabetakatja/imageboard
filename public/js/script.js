@@ -68,11 +68,15 @@ new Vue({
             this.currentImage = null;
         },
         showMore: function() {
-            let lastId = this.images[this.images.length - 1].id;
             var me = this;
+            let lastId = me.images[me.images.length - 1].id;
+            // let firstId = me.images[10].id;
             axios.get(`/more/${lastId}`).then(function(response) {
                 console.log("Response in show more images: ", response.data);
                 me.images = me.images.concat(response.data);
+                if (response.data == 0) {
+                    me.more = false;
+                }
             });
         }
     }

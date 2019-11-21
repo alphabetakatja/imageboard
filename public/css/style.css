@@ -119,6 +119,7 @@ img {
 #show-more {
     margin-left: 500px;
     width: 400px;
+    /* position: fixed; */
 }
 
 footer p {
