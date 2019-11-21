@@ -94,6 +94,9 @@ app.post("/comment/:id/add", (req, res) => {
     db.addImageComment(text, name, imageId)
         .then(results => {
             console.log("results in addImageComment: ", results.rows);
+            results.rows[0].created_at = moment(
+                results.rows[0].created_at
+            ).format("LLLL");
             res.json(results.rows);
         })
         .catch(err => console.log("error in add-comment post req: ", err));

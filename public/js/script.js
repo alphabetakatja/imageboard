@@ -3,7 +3,7 @@ new Vue({
     el: "#main",
     data: {
         seen: false,
-        currentImage: null,
+        currentImage: location.hash.slice(1) || null,
         // location.hash.slice(1);
         // the hash is available to us in js
         // location.hash - always a string, either empty or #
@@ -22,6 +22,10 @@ new Vue({
         console.log("my Vue components has mounted!");
         console.log("this is my images data: ", this.images);
         var me = this;
+        window.addEventListener("hashchange", function() {
+            me.currentImage = location.hash.slice(1);
+        });
+
         axios
             .get("/images")
             .then(function(response) {
