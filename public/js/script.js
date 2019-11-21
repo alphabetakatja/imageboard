@@ -15,7 +15,8 @@ new Vue({
         description: "",
         username: "",
         file: null,
-        more: true
+        more: true,
+        print: false
     },
     mounted: function() {
         console.log("my Vue components has mounted!");
@@ -76,6 +77,7 @@ new Vue({
                 me.images = me.images.concat(response.data);
                 if (response.data == 0) {
                     me.more = false;
+                    me.print = true;
                 }
             });
         }

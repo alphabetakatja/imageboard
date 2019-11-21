@@ -36,7 +36,9 @@
                     v-if="currentImage"
                     v-bind:id="currentImage" @close-the-modal = closingTheModal></modal>
                 </div>
+
                 <button v-if="more" class="submit-btn" id="show-more" @click="showMore">Show more</button>
+                <p v-if="print">No more photos</p>
             </div>
 
         </main>
