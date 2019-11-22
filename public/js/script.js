@@ -4,7 +4,6 @@ new Vue({
     data: {
         seen: false,
         currentImage: location.hash.slice(1) || null,
-        // location.hash.slice(1);
         // the hash is available to us in js
         // location.hash - always a string, either empty or #
         // window.addEventListener('hashchange', function() {
@@ -34,10 +33,6 @@ new Vue({
                 me.images = response.data;
             })
             .catch(err => console.log("error in response from images: ", err));
-
-        // addEventListener("hashchange", function() {
-        //     console.log(location.hash.slice(1));
-        // });
     },
     methods: {
         handleClick: function(e) {
@@ -70,6 +65,7 @@ new Vue({
             this.currentImage = id;
         },
         closingTheModal: function() {
+            location.hash = "";
             this.currentImage = null;
         },
         showMore: function() {

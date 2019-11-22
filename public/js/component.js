@@ -91,3 +91,5 @@ Vue.component("modal", {
         }
     }
 });
+
+// <button id="file-btn"><input class="add-file" type="file" name="file" @change="handleChange" accept="image/*"><label for="file">Upload</label></button>
