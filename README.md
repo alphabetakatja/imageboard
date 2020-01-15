@@ -38,4 +38,4 @@ Comments
 
 ## Roadmap
 
-Work on additional features like giving users the chance to upload pictures directly from internet, adding 'like' option, use IMDb API to enable extensive movie insight.
+Work on additional features like giving users the chance to delete their image, 'like' another users image, etc...
