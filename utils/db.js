@@ -37,21 +37,21 @@ exports.addImageComment = function(text, name, imageId) {
 
 exports.showMoreImages = function(lastId) {
     return db.query(
-        `SELECT * FROM images WHERE id < $1 ORDER BY id desc LIMIT 4`,
+        `SELECT * FROM images WHERE id < $1 ORDER BY id desc LIMIT 8`,
         [lastId]
     );
 };
 
-// SELECT id FROM images ORDER BY id ASC LIMIT 1;
-// query in a query
-// SELECT images.*, (SELECT id FROM images ORDER BY id ASC LIMIT 1) AS "lowestId" FROM images WHERE id
-// < $1 ORDER BY id desc LIMIT 24;
-// this.images[this.images.length -1].id
-
-// http://localhost:8080/habanero/imageboard
-// hashes are invisible to servers
-// the javascript code can read the hash
-
-// id | tag | image_id
-// 1 | cute | 13
-// 2 | cute | 15
+// exports.insertTag = function(tag, image_id) {
+//     return db.query(
+//         `INSERT INTO tags(tag, image_id) VALUES ($1, $2) RETURNING tag, image_id`,
+//         [tag, image_id || null]
+//     );
+// };
+//
+// exports.filterByTag = function(tag) {
+//     return db.query(
+//         `SELECT images.id AS id, images.url, images.title, images.description, images.username, tags.tag FROM images LEFT JOIN tags ON images.is = tags.image_id WHERE TAG = $1 ORDER BY id DESC`,
+//         [tag]
+//     );
+// };

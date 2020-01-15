@@ -13,9 +13,15 @@ new Vue({
         title: "",
         description: "",
         username: "",
+        tag: "",
         file: null,
         more: true,
-        print: false
+        print: false,
+        croatia: false,
+        serbia: false,
+        germany: false,
+        portugal: false,
+        other: false
     },
     mounted: function() {
         console.log("my Vue components has mounted!");
@@ -61,9 +67,9 @@ new Vue({
             console.log("e.target.files[0]", e.target.files[0]);
             this.file = e.target.files[0];
         },
-        setCurrentImage: function(id) {
-            this.currentImage = id;
-        },
+        // setCurrentImage: function(id) {
+        //     this.currentImage = id;
+        // },
         closingTheModal: function() {
             location.hash = "";
             this.currentImage = null;

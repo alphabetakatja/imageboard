@@ -5,7 +5,6 @@
 }
 
 html {
-    backrground-color: #fff;
     color: #e0e0e0;
     font-family: "Work Sans", sans-serif;
     font-weight: 300;
@@ -26,7 +25,7 @@ body {
     color: #cccccc;
 }
 
-body h1 {
+h1 {
     margin: 30px 0 30px 30px;
     text-align: left;
     font-weight: 200;
@@ -35,11 +34,11 @@ body h1 {
 }
 
 .upload-form {
-    display: inline-block;
     margin-left: 20px;
 }
 
-input {
+input,
+.add-tag {
     width: 150px;
     height: 30px;
     font-size: 15px;
@@ -47,48 +46,42 @@ input {
     border-radius: 5px;
 }
 
-/* .add-file input[type="file"] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
+.add-file {
+    width: 0.1px;
+    height: 0.1px;
     opacity: 0;
-} */
-
-/* input.add-file {
-    font-size: 100px;
+    overflow: hidden;
     position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
+    z-index: -1;
+    top: 25px;
 }
-#file-btn {
+
+.add-file + label {
     width: 100px;
     padding: 5px;
-    color: white;
     background-color: #ce792e;
     border: 1px solid #b6743b;
     border-radius: 5px;
-    cursor: pointer;
-    width: 100px;
-    height: 35px;
-    /* border-width: 0; */
-/* letter-spacing: 2px;
-    text-transform: uppercase;
     color: white;
-    margin-top: 15px;
-}  */
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.add-file:hover + label {
+    background-color: #f59542;
+    color: black;
+}
 
 /* BUTTONS */
 .submit-btn {
     width: 100px;
-    height: 35px;
     padding: 5px;
     color: white;
     background-color: #ce792e;
     border: 1px solid #b6743b;
     border-radius: 5px;
-    /* border-width: 0; */
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
@@ -127,10 +120,6 @@ img {
     width: 100%;
 }
 
-/* p {
-    margin: 5px 0;
-} */
-
 .image-title {
     display: flex;
     flex-direction: column;
@@ -144,15 +133,21 @@ img {
 }
 
 #show-more {
-    margin-left: 550px;
+    /* margin-left: 550px; */
     width: 400px;
-    /* position: fixed; */
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.centered {
+    text-align: center;
 }
 
 #print-message {
-    margin-left: 500px;
+    /* margin-left: 500px; */
     color: #ce792e;
     font-size: 20px;
+    margin: 0 auto;
 }
 
 footer p {
@@ -176,7 +171,6 @@ footer p {
     flex-direction: row;
     margin-bottom: 20px;
     flex-flow: row wrap;
-
     /* Then we define how is distributed the remaining space */
     justify-content: space-around;
 }
@@ -208,14 +202,8 @@ footer p {
     margin-bottom: 15px;
 }
 
-/* .comment-form input {
-    color: red;
-} */
-
 .comment-info {
     margin-top: 100px;
-}
-.comments-container {
 }
 
 .comment-btn {

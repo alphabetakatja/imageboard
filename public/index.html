@@ -12,18 +12,28 @@
         </header>
         <main>
             <div id="main">
+
                 <form class="upload-form">
                     <input v-model="title" class="add-title" type="text" name="title" placeholder="title">
                     <input v-model="description" class="add-description" type="text" name="description" placeholder="description">
                     <input v-model="username" class="add-username" type="text" name="username" placeholder="username">
-                    <input @change="handleChange" class="add-file" type="file" name="file" accept="image/*">
+                    <!-- <select v-model="tags" class="add-tag" type="text" name="tags">
+                        <option value="" disabled>Select a tag</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Other">Other</option>
+                    </select> -->
+                    <input @change="handleChange" type="file" name="file" id="file" class="add-file" accept="image/*"/>
+                    <label for="file">Select image</label>
                     <button class="submit-btn" type="submit" name="button" @click.prevent.default="handleClick">Submit</button>
                 </form>
 
                 <div class="image-container">
                     <div  class="image-card" v-for="image in images">
                         <!-- <a href="'#' + image.id" v-for="image in images"> -->
-                        <a :href="'#' + image.id"><img :src="image.url" @click="setCurrentImage(image.id)"></img></a>
+                        <a :href="'#' + image.id"><img :src="image.url"></img></a>
                         <p class="image-title">{{image.title}}</p>
                         <!-- this method needs to exist in the vue instance(in the parent element) -->
 
@@ -37,8 +47,10 @@
                     v-bind:id="currentImage" @close-the-modal = closingTheModal></modal>
                 </div>
 
-                <button v-if="more" class="submit-btn" id="show-more" @click="showMore">Show more</button>
-                <p v-if="print" id="print-message">You've reached the end of the photo gallery . . .</p>
+                <div class="centered">
+                    <button v-if="more" class="submit-btn" id="show-more" @click="showMore">Show more</button>
+                    <p v-if="print" id="print-message">You've reached the end of the photo gallery . . .</p>
+                </div>
             </div>
 
         </main>

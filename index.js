@@ -113,4 +113,14 @@ app.get("/more/:lastId", (req, res) => {
     });
 });
 
+app.post("/upload/tag", (req, res) => {
+    db.insertTag(req.body.tag, req.body.image_id)
+        .then(results => {
+            res.json(results.rows);
+        })
+        .catch(err => {
+            console.log("error in POST /upload/tag: ", err);
+        });
+});
+
 app.listen(8080, () => console.log("Imageboard up and running!"));

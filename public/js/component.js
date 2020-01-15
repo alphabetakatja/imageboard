@@ -24,6 +24,10 @@ Vue.component("modal", {
             axios.get(`/image-data/${me.id}`).then(function(response) {
                 if (response.data.length > 0) {
                     me.image = response.data[0].url;
+                    me.title = response.data[0].title;
+                    me.description = response.data[0].description;
+                    me.username = response.data[0].username;
+                    me.timestamp = response.data[0]["created_at"];
                 } else {
                     function closeModal() {
                         me.$emit("close-the-modal");
