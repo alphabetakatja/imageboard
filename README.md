@@ -1,5 +1,8 @@
 # My Analogue Diary Image Board
 
+I've been taking analogue photos for a long time now and I was never really sure what to do with them.
+This project is very dear to me because, except from learning Vue.js, I managed to find a special place to store most of my photos.
+
 ## Overview
 
 This is Instagram inspired image board where anybody can upload an analogue picture of their choice and see pictures that others have uploaded.
@@ -23,16 +26,14 @@ Click on a picture opens a modal where anybody can leave a comment
 
 ## Preview
 
-## Preview
-
-Image board
+### Image board
 
 ![](imageboard-layout.jpg)
 
 See more button
 ![](see-more.jpg)
 
-Comments
+### Comments
 
 ![](modal.jpg)
 
